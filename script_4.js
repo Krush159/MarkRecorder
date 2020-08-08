@@ -36,9 +36,9 @@ function addData(){
     console.log(obj)
     db.push(obj)  
     console.log(db)
-    displayData()
+    displayData(db)
 }
-function displayData(){
+function displayData(db){
     var engn = document.getElementById("eng4").value
     var matn = document.getElementById("mat4").value
     var scin = document.getElementById("sci4").value
@@ -156,18 +156,49 @@ function displayData(){
     
 
 }
+function divsn(){
+    var select = document.getElementById("Div")
+    var selectValue = select.options[select.selectedIndex].value
 
-
-// function div(){
-//     var select = document.getElementById("filter")
-//     var selectValue = select.option[select.selectIndex].value
-//     if(selectValue == "1stDiv"){
-//         var filterDb = db.filter(function(item){
-//             return Number(item.percent)>=60
-//         })
-        
-//     }
-//     // var result = words.filter(word => word.length > 6);
-
-// }
+    if(selectValue == "1stDiv"){
+        var filterDb = db.filter(function(item){
+            return item.percent >= 60
+        })
+    }
+    else if(selectValue == "2ndDiv"){
+        var filterDb = db.filter(function(item){
+            return item.percent >= 50 && item.percent < 60
+        })
+    }
+    else if(selectValue == "3rdDiv"){
+        var filterDb = db.filter(function(item){
+            return item.percent >= 35 && item.percent < 50
+        })
+    }
+    else if(selectValue == "fail"){
+        var filterDb = db.filter(function(item){
+            return item.percent >= 0 && item.percent < 35
+        })
+    }
+    // var result = words.filter(word => word.length > 6);
+    displayData(filterDb)
+}
+    // function filasc(){
+    // // remove all child of tbody 
+    //     function compare(key){
+    //         return function innerSort(a,b){
+    //             if(!a.hasOwnProperty(key)|| !b.hasOwnProperty(key)){
+    //                 return 0 //property doesnot exist on either object
+    //             }
+    //         var X = (typeof a[key] === 'string')? a[key].toUpperCase():a[key];
+    //         var Y = (typeof b[key] === 'string')? b[key].toUpperCase():b[key];
+            
+    //         var comparision = 0
+    //         if ( X > Y){comparision = 1} 
+    //         else if(X < Y){comparision = -1}
+    //         return comparision 
+    //         }
+    //     }
+    //    db.sort(compare('Name'))
+    // }
 
