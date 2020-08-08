@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIPS- NEW ENTRY</title>
+    <link rel="stylesheet" href="style4.css" type="text/css">
+</head>
+<body>
+    <script src="script_4.js"></script>
+    
+        <header>MASAI SCHOOL</header>
+        <div id="head2">MARK RECORDER</div>
+        <div id="DIV">
+            <form id="form" >
+                <div class = "DIV1">
+                    <div id="DIV11">NEW ENTRY</div>
+                    <div id="DIV12">
+                        <label for="examination">EXAMINATION TYPE :</label>
+                        <select name="examination" id="exam4" class="inp">
+                            <option value="Annualexam">Annual-Examination (2019-2020)</option>
+                            <option value="Halfyearly">Half-Yearly-Examination (2019-2020)</option>
+                        </select>
+                    </div>
+                    <div id="DIV13">
+                        <label for="examination">GRADE :
+                            <select name="grade" id="grade4" class= "inp">
+                                <option value="grade7">VII</option>
+                                <option value="grade8">VIII</option>
+                                <option value="grade9">IX</option>
+                                <option value="grade10">X</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div id="DIV14">
+                        <label for="examination">SECTION :
+                            <select name="section" id="sec4" class= "inp">
+                                <option value="secA">A</option>
+                                <option value="secB">B</option>
+                                <option value="secC">C</option>
+                            </select>
+                        </label>
+                    </div>
+                    <div id="DIV15">
+                        ROLL NO: 
+                        <input type="text" id="roll4" name="roll4" class= "inp">
+                    </div>
+                    <div id="DIV16">
+                        STUDENT NAME : 
+                        <input type="text" id="name4" name="name4" class= "inp">
+                    </div>
+                    <div id="DIV17">Enter marks for each subject</div>
+                    <div id="div17">
+                        ENGLISH :
+                        <input type="text" id = "eng4" name = "eng4" class= "inp">
+                    </div>
+                    <div id="DIV18">
+                        MATHS : 
+                        <input type="text" id = "mat4" name= "mat4" class= "inp">
+                    </div>
+                    <div id="DIV19">
+                        SCIENCE :
+                        <input type="text" id = "sci4" name = "sci4" class= "inp">
+                    </div>
+                    <div id="DIV20">
+                        SOCIAL STUDIES :
+                        <input type="text" id = "sst4" name = "sst4" class= "inp">
+                    </div>
+                    <div id="DIV21">
+                        MIL : 
+                        <input type="text" id = "mil4" name = "mil4" class= "inp">                  
+                    </div>
+                    <div id="DIV22">
+                        <input type="submit" value="Submit" id = "sub" onclick="addData()">
+                        <input type="reset" value="Reset" >
+                    </div>                    
+                </div>
+            </form>     
+            
+        
+            <div class="DIV2">
+                <div id="div22">STUDENT DATABASE</div>
+                <div id="div23">ANNUAL EXAMINATION RESULT 2019-2020</div>
+                <div id="div24">GRADE-VII SECTION-A
+                    <div id="filter">Filter :
+                        <select name="Division" id="Div" >
+                            <option value="choose">--Select--</option>
+                            <option value="1stDiv" onclick="div()">First Division</option>
+                            <option value="2ndDiv" onclick="div()">Second Division</option>
+                            <option value="3rdDiv" onclick="div()">Third Division</option>
+                            <option value="fail" onclick="div()">Fail</option>
+                        </select>
+                    </div>
+                    <div id="sort">Sort :
+                        <select name="Sorting" id="AscDesc">
+                            <option value="choose">--Select--</option>
+                            <option value="Ascending">Ascending</option>
+                            <option value="Descending">Descending</option>
+                        </select>
+                    </div>
+                </div>
+                <table id="tbl">
+                    <thead id="head">
+                        <tr id="heading">
+                            <td>RollNo</td>
+                            <td>Name</td>
+                            <td>Eng</td>
+                            <td>Math</td>
+                            <td>Science</td>
+                            <td>SST</td>
+                            <td>MIL</td>
+                            <td>%</td>
+                        </tr>
+                    </thead>
+                    <tbody id="body">
+
+                    </tbody>
+                    <tfoot id="foot">
+                        <tr id ="avg">
+                            <td id="avG"></td>
+                            <td id="hyp"></td>
+                            <td id="engs"></td>
+                            <td id="mats"></td>
+                            <td id="scis"></td>
+                            <td id="ssts"></td>
+                            <td id="mils"></td>  
+                        </tr>
+                    </tfoot>
+                    
+                </table>    
+                
+            </div> 
+        </div>
+      
+   
+</body>
+</html>

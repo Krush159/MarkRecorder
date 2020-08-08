@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <label for="name">Name:<input type="text" id="Ename"></label>
+    <label for="id">Id:<input type="text" id="Eid"></label>
+    <label for="date">DOB:<input type="date" id="Edate"></label>
+    <label for="email">Email:<input type="email" id="Eemail"></label>
+    <button id="submit" onclick="store()">Submit</button>
+    <input type="reset" value="Reset" onclick="reset()">
+    <select name="sorting" id="srt">
+        <option value="alpha-ascending" onclick="filasc()">alpha-ascending</option>
+        <option value="alpha-descending" onclick="fildec()">alpha-descending</option>
+    </select>
+    <div>
+        <table >
+            <thead id="heading">
+                <tr><th>Name:</th>
+                    <th>ID:</th>
+                    <th>DOB:</th>
+                    <th>Email:</th>
+                </tr>
+            </thead>
+            <tbody id="tbl">
+                
+            </tbody>
+        </table>
+    </div>
+</body>
+<script>
+    var nam = document.getElementById("Ename")
+    var id = document.getElementById("Eid")
+    var date = document.getElementById("Edate")
+    var email = document.getElementById("Eemail")
+
+    var arr = []
+     
+    
+    function store(){
+        // var arr = []
+        var obj = {
+            Name: nam.value,
+            Id: id.value,
+            Date: date.value,
+            Email: email.value                
+        }        
+        arr.push(obj)
+        console.log(arr) 
+        
+        var row = document.createElement("tr")
+        var cell1 = document.createElement("td")
+        var cell2 = document.createElement("td")
+        var cell3 = document.createElement("td")
+        var cell4 = document.createElement("td") 
+        cell1.innerHTML = nam.value
+        cell2.innerHTML = id.value
+        cell3.innerHTML = date.value
+        cell4.innerHTML = email.value
+        row.appendChild(cell1)
+        row.appendChild(cell2)
+        row.appendChild(cell3)
+        row.appendChild(cell4)
+        var tblBody = document.getElementById("tbl")
+        tblBody.appendChild(row)
+        
+    }
+    function reset(){
+        nam.value =""
+        id.value = ""
+        date.value = ""
+        email.value = ""
+    }
+
+    function filasc(){
+        // remove all child of tbody 
+        function compare(key){
+            return function innerSort(a,b){
+                if(!a.hasOwnProperty(key)|| !b.hasOwnProperty(key)){
+                    return 0 //property doesnot exist on either object
+                }
+            var X = (typeof a[key] === 'string')? a[key].toUpperCase():a[key];
+            var Y = (typeof b[key] === 'string')? b[key].toUpperCase():b[key];
+            
+            var comparision = 0
+            if ( X > Y){comparision = 1} else if(X < Y){comparision = -1}
+            return comparision 
+            }
+        }
+        arr.sort(compare('Name'))
+    }
+</script>
+</html>
