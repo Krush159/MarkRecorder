@@ -8,7 +8,7 @@
 ### Stacks Used:
   - > HTML5
   - > CSS3
-  - > JavaSvript
+  - > JavaScript
 
 ### To run on your computer:
   - Clone the repository
